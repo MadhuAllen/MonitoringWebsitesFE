@@ -1,0 +1,24 @@
+<div class="container text-center pt-6">
+  <h2>Monitor Websites</h2>
+  <label>Add URL :</label>
+  <input style="margin: 10px; width: 500px;" type="text" [(ngModel)]="url" ><br/>
+  <button type="button" style="margin:  5px!important;" class="btn btn-primary mt-3 mt-lg-0 " aria-hidden="true" (click)="addWebsite(url)">Save</button>
+  <div class="row justify-content-center">
+  <table style="width: 70%; margin: 10px;;" class="table text-center table-bordered">
+  <thead style="background-color: azure;">
+    <th>Id</th>
+    <th>Website</th>
+    <th>Status</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let web of website">
+      <td>{{web?.id}}</td>
+      <td>{{web?.url}}</td>
+      <td>
+        <button *ngIf="web?.status==false" class="btn btn-danger mt-3 mt-lg-0" disabled>FAILURE</button>
+        <button *ngIf="web?.status==true" class="btn btn-success mt-3 mt-lg-0" disabled>SUCCESS</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
